@@ -9,7 +9,7 @@
 handle: me
 
 # IANA timezone — pick yours from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone: Asia/Tokyo
+timezone: US/Chicago
 
 # === SUBSCRIPTION FILTERS ===
 # A venue matches if ANY of: topics ∪ keywords ∪ venues hits.

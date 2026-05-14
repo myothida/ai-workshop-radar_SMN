@@ -10,3 +10,4 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+.env_example
