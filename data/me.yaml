@@ -9,7 +9,7 @@
 handle: me
 
 # IANA timezone — pick yours from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone: US/Chicago
+timezone: America/Chicago
 
 # === SUBSCRIPTION FILTERS ===
 # A venue matches if ANY of: topics ∪ keywords ∪ venues hits.
@@ -42,5 +42,5 @@ include_conferences: true
 digest_days_ahead: 30
 
 env:
-  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+  TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{secrets.TELEGRAM_CHAT_ID }}
