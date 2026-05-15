@@ -10,7 +10,6 @@ on:
 jobs:
   send-digest:
     runs-on: ubuntu-latest
-    environment: production
     timeout-minutes: 10
     permissions:
       contents: write   # to commit data/notified.yaml back
@@ -27,17 +26,20 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+      - name: Check secrets
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: 
+          test -n "$TELEGRAM_BOT_TOKEN" && echo "✅ token exists" || echo "❌ token missing"
+
       - name: Send digest
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          # For multi-user mode, add namespaced secrets in your fork:
-          #   TELEGRAM_CHAT_ID_<HANDLE>
-          #   SLACK_WEBHOOK_URL_<HANDLE>
           DATA_DIR: ./data
           PYTHONPATH: .
-        run: python scripts/send_digests.py
+        run: PYTHONPATH="$GITHUB_WORKSPACE" python scripts/send_digests.py
 
       # Commit the updated notified.yaml so we don't re-notify tomorrow.
       - name: Commit notification state
