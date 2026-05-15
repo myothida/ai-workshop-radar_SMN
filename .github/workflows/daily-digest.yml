@@ -10,6 +10,7 @@ on:
 jobs:
   send-digest:
     runs-on: ubuntu-latest
+    environment: production
     timeout-minutes: 10
     permissions:
       contents: write   # to commit data/notified.yaml back
