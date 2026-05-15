@@ -27,7 +27,7 @@ def send_telegram(token: str, chat_id: int, text: str) -> bool:
         r = requests.post(url, json={
             "chat_id": chat_id,
             "text": text,
-            "parse_mode": "Markdown",
+            # "parse_mode": "Markdown",
             "disable_web_page_preview": True,
         }, timeout=15)
         if not r.ok:
