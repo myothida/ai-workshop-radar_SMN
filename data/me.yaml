@@ -32,13 +32,9 @@ keywords:
 
 # Optional: subscribe to specific venues by ID (in addition to topics + keywords).
 # IDs come from data/conferences.yaml and data/workshops.yaml.
-venues: [cvpr2026, c3nlp_acl2026]
+venues: ['c3nlp_acl2026']
 
 # === DISPLAY OPTIONS ===
 include_workshops: true
 include_conferences: true
 digest_days_ahead: 30
-
-env:
-  TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN }}
-  TELEGRAM_CHAT_ID: ${{secrets.TELEGRAM_CHAT_ID }}
