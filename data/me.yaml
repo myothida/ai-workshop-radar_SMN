@@ -32,7 +32,7 @@ keywords:
 
 # Optional: subscribe to specific venues by ID (in addition to topics + keywords).
 # IDs come from data/conferences.yaml and data/workshops.yaml.
-venues: ['c3nlp_acl2026']
+venues: ['cvpr2026', 'c3nlp_acl2026']
 
 # === DISPLAY OPTIONS ===
 include_workshops: true
