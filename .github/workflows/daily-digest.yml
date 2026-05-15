@@ -26,12 +26,6 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Check secrets
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: 
-          test -n "$TELEGRAM_BOT_TOKEN" && echo "✅ token exists" || echo "❌ token missing"
-
       - name: Send digest
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -39,7 +33,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           DATA_DIR: ./data
           PYTHONPATH: .
-        run: PYTHONPATH="$GITHUB_WORKSPACE" python scripts/send_digests.py
+        run: python scripts/send_digests.py
 
       # Commit the updated notified.yaml so we don't re-notify tomorrow.
       - name: Commit notification state

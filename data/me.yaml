@@ -20,7 +20,6 @@ topics:
   - ai_safety
   - multimodal
   - nlp
-  - japan_local
 
 # Free-text keywords matched against venue name/description/topics/location.
 # Single words use word-boundary matching; multi-word phrases use substring.
@@ -34,7 +33,7 @@ keywords:
 
 # Optional: subscribe to specific venues by ID (in addition to topics + keywords).
 # IDs come from data/conferences.yaml and data/workshops.yaml.
-venues: []
+venues: [cvpr2026]
 
 # === DISPLAY OPTIONS ===
 include_workshops: true
